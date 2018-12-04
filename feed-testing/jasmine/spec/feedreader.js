@@ -34,11 +34,11 @@ $(function() {
 
         it('should have each feed url defined and not to be empty', function () {
             
-                allFeeds.forEach(function(feed){
-                expect(feed.url).toBeDefined();        
-                expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url.length).not.toBe(0);
-            }
+               allFeeds.forEach(function(feed) {
+             feedLink = feed.url;
+             expect(feedLink).toBeDefined();
+             expect(feedLink.length).not.toBe(0);
+             });
         });
 
 
@@ -47,11 +47,13 @@ $(function() {
          * and that the name is not empty.
          */
         it('should have each feed name defined and not to be empty', function () {
-            for(var i=0, len=allFeeds.length; i<len; i++){
-                expect(allFeeds[i].name).toBeDefined();
-                expect(allFeeds[i].name.length).not.toBe(0);
-            }
+            allFeeds.forEach(function(feed) {
+                feedName = feed.name;
+                expect(feedName).toBeDefined();
+                expect(feedName.length).not.toBe(0);
+            });
         });
+
     });
 
 
