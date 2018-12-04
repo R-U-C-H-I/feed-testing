@@ -33,7 +33,9 @@ $(function() {
          */
 
         it('should have each feed url defined and not to be empty', function () {
-            for(var i=0, len=allFeeds.length; i<len; i++){
+            
+                allFeeds.forEach(function(feed){
+                expect(feed.url).toBeDefined();        
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url.length).not.toBe(0);
             }
@@ -101,7 +103,8 @@ $(function() {
          */
 
         it('should loadFeed and render the entry and .feed container', function () {
-            expect($('.feed').has('.entry').length).not.toBe(0);
+            //expect($('.feed').has('.entry').length).not.toBe(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
      });
 
